@@ -1,0 +1,40 @@
+<div class="table-responsive table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Valor</th>
+        <th>Variação Dia</th>
+        <th>Aberto</th>
+        <th>Máxima</th>
+        <th>Baixa</th>
+        <th>Prev</th>
+        <th></th> </tr>
+    </thead>
+    <tbody>
+      @for (stock of stocksData; track stock.name) {
+        <tr class="stock-row">
+          <td class="stock-name">{{ stock.name }}</td>
+          <td class="stock-value">{{ stock.price | currencyBr }}</td>
+          <td class="stock-change" [ngClass]="{'positive': stock.change > 0, 'negative': stock.change < 0}">
+            {{ stock.change > 0 ? '+' : '' }}{{ stock.change }}%
+          </td>
+          <td class="stock-open">{{ stock.open | currencyBr }}</td>
+          <td class="stock-high">{{ stock.high | currencyBr }}</td>
+          <td class="stock-low">{{ stock.low | currencyBr }}</td>
+          <td class="stock-prev">{{ stock.prev | currencyBr }}</td>
+          <td class="stock-actions">
+            <button class="remove-button" (click)="removeStock(stock.id)">
+              &times; </button>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="8" class="no-stocks-message">
+            Nenhuma ação adicionada ainda. Clique em "Adicionar" para começar.
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

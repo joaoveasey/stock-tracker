@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #222222;
+  color: #c0c0c0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+app-dashboard {
+  flex-grow: 1;
+  padding-bottom: 50px;
+}
+
+app-footer {
+  margin-top: auto; 
+}

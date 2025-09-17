@@ -1,9 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { MajorIndicesComponent } from "./components/major-indices/major-indices.component";
+import { FooterComponent } from "./components/footer/footer.component";
+import { DashboardContentComponent } from "./components/dashboard-content/dashboard-content.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [MajorIndicesComponent, FooterComponent, DashboardContentComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

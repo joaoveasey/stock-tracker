@@ -1,0 +1,51 @@
+
+.scrolling-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  background-color: #222222;
+}
+
+.scrolling-content {
+  display: inline-block;
+  animation: scroll-left 45s linear infinite;
+}
+
+.index-item {
+  display: inline-block;
+  padding: 0 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #fff;
+}
+
+.index-name {
+  font-weight: bold;
+}
+
+.index-price {
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.index-change {
+  margin-left: 8px;
+  font-weight: bold;
+}
+
+.index-change.positive {
+  color: #00ff00;
+}
+
+.index-change.negative {
+  color: #ff0000; 
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

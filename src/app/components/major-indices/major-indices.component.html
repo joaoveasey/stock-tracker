@@ -1,0 +1,26 @@
+<div class="scrolling-container">
+  <div class="scrolling-content">
+    
+    @for (index of indicesData; track index.name) {
+      <div class="index-item">
+        <span class="index-name">{{ index.name }}</span>
+        <span class="index-price">{{ index.price | currencyBr }}</span>
+        <span class="index-change" [ngClass]="{'positive': index.change > 0, 'negative': index.change < 0}">
+          {{ index.change > 0 ? '+' : '' }}{{ index.change }}%
+        </span>
+      </div>
+    } @empty {
+      <p>Nenhum índice disponível.</p>
+    }
+
+    @for (index of indicesData; track index.name) {
+      <div class="index-item">
+        <span class="index-name">{{ index.name }}</span>
+        <span class="index-price">{{ index.price | currencyBr }}</span>
+        <span class="index-change" [ngClass]="{'positive': index.change > 0, 'negative': index.change < 0}">
+          {{ index.change > 0 ? '+' : '' }}{{ index.change }}%
+        </span>
+      </div>
+    }
+  </div>
+</div>
