@@ -1,4 +1,5 @@
-import { Component, output } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
+import { ModalServices } from '../../services/modal.services';
 
 @Component({
   selector: 'app-add-stock-button',
@@ -7,9 +8,10 @@ import { Component, output } from '@angular/core';
   styleUrl: './add-stock-button.component.css'
 })
 export class AddStockButtonComponent {
- openModal = output<void>();
+  private modalService = inject(ModalServices);
 
   onClick() {
-    this.openModal.emit();
+    console.log('Button clicked!');
+    this.modalService.openModal();
   }
 }
